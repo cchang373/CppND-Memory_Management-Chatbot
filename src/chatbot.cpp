@@ -99,6 +99,8 @@ ChatBot &ChatBot::operator=(ChatBot &&source)
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
 
+    _chatLogic->SetChatbotHandle(this); // for deallocation
+
     source._image = NULL;
     source._currentNode = nullptr;
     source._rootNode = nullptr;
